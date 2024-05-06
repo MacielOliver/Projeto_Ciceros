@@ -8,6 +8,7 @@ import Pasta_Login.usuario_DTO;
 import Pasta_cliente.cliente_DTO;
 import Pasta_estoque.Estoque_DAO;
 import Pasta_estoque.estoque_DTO;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -103,7 +104,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelaPedidos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 300, 560));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 300, 560));
 
         txtDescricao.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         txtDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -179,7 +180,12 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         getContentPane().add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 140, 100, 40));
 
         btnExcluir.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnExcluir.setLabel("EXCLUIR");
+        btnExcluir.setLabel("VOLTAR");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 610, 80, 40));
 
         btnPesquisar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -211,6 +217,12 @@ public class CadastroPedidosView extends javax.swing.JFrame {
 
         txt_Nome_Cliente.setEnabled(false);
         getContentPane().add(txt_Nome_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 90, -1));
+
+        txt_vlr_total.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_vlr_totalActionPerformed(evt);
+            }
+        });
         getContentPane().add(txt_vlr_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 120, 30));
 
         pack();
@@ -316,8 +328,30 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtValorActionPerformed
 
     private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
-        // TODO add your handling code here:
+        
+        int
+                campoIDCliente;
+        String
+                campoObservacao;
+        
+        LocalDate data = LocalDate.now();
+        
+        
+        campoIDCliente = Integer.parseInt(txt_ID_Cliente.getText());
+        
+        campoObservacao = AreaObservacao.getText();
+        
+        
+        
     }//GEN-LAST:event_btnPagamentoActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void txt_vlr_totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_vlr_totalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_vlr_totalActionPerformed
 
     /**
      * @param args the command line arguments
