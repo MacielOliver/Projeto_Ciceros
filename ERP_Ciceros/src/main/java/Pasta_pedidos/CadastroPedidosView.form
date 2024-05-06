@@ -216,7 +216,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1070" y="582" width="110" height="40"/>
+          <AbsoluteConstraints x="1050" y="200" width="160" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -353,13 +353,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="txt_vlr_total">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1070" y="590" width="110" height="-1"/>
+          <AbsoluteConstraints x="1060" y="590" width="120" height="30"/>
         </Constraint>
       </Constraints>
     </Component>

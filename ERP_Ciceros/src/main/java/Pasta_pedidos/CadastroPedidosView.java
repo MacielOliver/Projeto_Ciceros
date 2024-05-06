@@ -19,6 +19,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     
     
     double getPreco;
+    boolean teste = true;
     
     estoque_DTO objDTO = new estoque_DTO();
     Estoque_DAO objDAO = new Estoque_DAO();
@@ -27,7 +28,8 @@ public class CadastroPedidosView extends javax.swing.JFrame {
      * Creates new form CadastroPedidosView
      */
     public CadastroPedidosView() {
-        initComponents();      
+        initComponents();
+        txt_vlr_total.setText(String.valueOf(0));
     }
     
     
@@ -66,7 +68,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txt_ID_Cliente = new javax.swing.JTextField();
         txt_Nome_Cliente = new javax.swing.JTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        txt_vlr_total = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pedidos");
@@ -147,7 +149,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
                 txtValorActionPerformed(evt);
             }
         });
-        getContentPane().add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 582, 110, 40));
+        getContentPane().add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 200, 160, 40));
 
         btnSalvar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnSalvar.setLabel("SALVAR");
@@ -209,9 +211,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
 
         txt_Nome_Cliente.setEnabled(false);
         getContentPane().add(txt_Nome_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 90, -1));
-
-        jFormattedTextField1.setText("jFormattedTextField1");
-        getContentPane().add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 590, 110, -1));
+        getContentPane().add(txt_vlr_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 120, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -244,24 +244,30 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-       //precisa arrumar a conta pois não está funcionando os calculos.
-        
-        double
-                quantidade, resultado = 0, tentarSoma= 0, somaTotal = 0;
+        double vlr_produto, resultado=0, qtd_produtos, total,vlr_a_somar,vlr_total_somado,decimal_limitado;
        
-       quantidade = Double.parseDouble(txtQuantidade.getText());
+       vlr_produto= getPreco;
+       qtd_produtos = Double.parseDouble(txtQuantidade.getText());
        
-       resultado = (getPreco * quantidade) + tentarSoma;
-      
-       String teste = String.valueOf(somaTotal);
        
-       somaTotal = somaTotal + tentarSoma;
+       resultado =  (vlr_produto * qtd_produtos);
        
-       txtValor.setText(teste);
-       tentarSoma = Double.parseDouble(txtValor.getText());
-  
+       txtValor.setText(String.valueOf(resultado));
+       
+       vlr_a_somar= Double.parseDouble(txtValor.getText());
+       
+       total = Double.parseDouble(txt_vlr_total.getText());
+       
+       vlr_total_somado = vlr_a_somar + total;
+       
+       
+       txt_vlr_total.setText(String.valueOf(vlr_total_somado));
+       txtValor.setText("");
     }//GEN-LAST:event_btnAdicionarActionPerformed
-
+    
+    
+    
+    
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         // TODO add your handling code here:
         
@@ -273,6 +279,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     
     // Limpa o campo de valor
     txtValor.setText("");
+    txt_vlr_total.setText(String.valueOf(0));
 
     }//GEN-LAST:event_btnLimparActionPerformed
 
@@ -359,7 +366,6 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private java.awt.Button btnPagamento;
     private java.awt.Button btnPesquisar;
     private java.awt.Button btnSalvar;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -372,6 +378,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private javax.swing.JTextField txtValor;
     private javax.swing.JTextField txt_ID_Cliente;
     private javax.swing.JTextField txt_Nome_Cliente;
+    private javax.swing.JTextField txt_vlr_total;
     // End of variables declaration//GEN-END:variables
 
 }
