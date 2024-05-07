@@ -7,6 +7,7 @@ package Pasta_cliente;
 import Pasta_Login.usuario_DTO;
 import Pasta_pedidos.CadastroPedidosView;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -280,14 +281,21 @@ public class cliente_Cadastrar_VIEW extends javax.swing.JFrame {
            cliente_DAO objDAO = new cliente_DAO();
            String nome,endereco, telefone;
            int ID;
+           ID =Integer.parseInt(txtCliId.getText());
+           if(ID == 1){
+                JOptionPane.showMessageDialog(null, "O ID número um não pode ser excluido, por fazer parte do controle do sistema.");
+           }
+           else if(ID > 1){
+               objDTO.setChave_Primaria(Integer.parseInt(txtCliId.getText()));
+               objDTO.setNome(txtCliNome.getText());
+               objDTO.setTelefone(txtCliFone.getText());
+               objDTO.setEndereco(txtCliEndereco.getText());
            
-           objDTO.setChave_Primaria(Integer.parseInt(txtCliId.getText()));
-           objDTO.setNome(txtCliNome.getText());
-           objDTO.setTelefone(txtCliFone.getText());
-           objDTO.setEndereco(txtCliEndereco.getText());
+               objDAO.Alterar(objDTO);
+               Pesquisar();
+               Limpar_Campos();
+           }
            
-           objDAO.Alterar(objDTO);
-           Limpar_Campos();
            
     }//GEN-LAST:event_btn_alterarActionPerformed
 
@@ -323,8 +331,10 @@ public class cliente_Cadastrar_VIEW extends javax.swing.JFrame {
         int ID;
         
         ID = Integer.parseInt(txtCliId.getText());
-        
-        if(ID != 0){
+        if(ID == 1){
+            JOptionPane.showMessageDialog(null, "O ID número um não pode ser excluido, por fazer parte do controle do sistema.");
+        }
+        else if(ID > 1){
             objDAO.Excluir(ID);
             Limpar_Campos();
             Pesquisar();

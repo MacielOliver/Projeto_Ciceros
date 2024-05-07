@@ -5,11 +5,14 @@
 package Pasta_pedidos;
 
 import Pasta_conexao_Banco.ConexaoDAO;
+import Pasta_estoque.estoque_DTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.time.LocalDate;
 
 /**
  *
@@ -46,23 +49,84 @@ public class pedidos_DAO {
         
     }
     
-    public pedidos_DTO ConsultaUltimoID(){
-        pedidos_DTO objDTO = new pedidos_DTO();
-        try {
+  
+    
+    
+    public ArrayList<pedidos_DTO> Consulta_por_Data(String filtro){
+            ArrayList<pedidos_DTO> listaDTO = new ArrayList<pedidos_DTO>();
             
-            
-            String sql = "SELECT LAST_INSERT_ID() INTO @tb_pedido";
-            pstm = conn.prepareStatement(sql);
-            rs = pstm.executeQuery();
-            objDTO.setIdPedidos(rs.getInt("id_ped_pk"));
-            
-            JOptionPane.showMessageDialog(null,"Consulta realizada com sucesso: ");
-            
-        }catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null,"Erro na pedidos_DAO ao consultar o ID: " +  erro);
-            
+            String sql = "SELECT id_ped_pk, observacao, dia_pedido, nome,telefone FROM tb_pedido inner join tb_cliente on cliente = id_cli_pk WHERE dia_pedido like ?";
+           
+            try {
+                   pstm = conn.prepareStatement(sql);
+                   pstm.setString(1, "%"+filtro+"%");
+                   rs = pstm.executeQuery();
+                         while(rs.next()){
+                            pedidos_DTO Obj_DTO = new pedidos_DTO();
+                            Obj_DTO.setIdPedidos(rs.getInt("id_ped_pk"));
+                            Obj_DTO.setCampoObservacao(rs.getString("observacao"));
+                            Obj_DTO.setData(rs.getDate("dia_pedido").toLocalDate());
+                            Obj_DTO.setNome(rs.getString("nome"));
+                            Obj_DTO.setTelefone(rs.getString("telefone"));
+                
+                    listaDTO.add(Obj_DTO);
+                
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null,"Erro de Consulta "+ erro);
         }
+    
+    
+            return listaDTO;
+    }
+    
+    public pedidos_DTO Consulta_por_ID(int ID){
+        pedidos_DTO objDTO = new pedidos_DTO();
+        String sql = "SELECT * FROM tb_pedido WHERE id_ped_pk = ?";
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setInt(1, ID);
+            
+            rs = pstm.executeQuery();
+            
+            if(rs.next()){
+                objDTO.setCampoObservacao(rs.getString("observacao"));
+            }
+        } catch (SQLException erro) {
+            
+            JOptionPane.showMessageDialog(null,"Erro ao consultar por id: " + erro);
+        }
+        
         return objDTO;
+    }
+    
+    public ArrayList<pedidos_DTO> Consulta_por_Tel(String filtro){
+            ArrayList<pedidos_DTO> listaDTO = new ArrayList<pedidos_DTO>();
+            
+            String sql = "SELECT id_ped_pk, observacao, dia_pedido, nome,telefone FROM tb_pedido inner join tb_cliente on cliente = id_cli_pk WHERE telefone like ?";
+           
+            try {
+                   pstm = conn.prepareStatement(sql);
+                   pstm.setString(1, "%"+filtro+"%");
+                   rs = pstm.executeQuery();
+                         while(rs.next()){
+                            pedidos_DTO Obj_DTO = new pedidos_DTO();
+                            Obj_DTO.setIdPedidos(rs.getInt("id_ped_pk"));
+                            Obj_DTO.setCampoObservacao(rs.getString("observacao"));
+                            Obj_DTO.setData(rs.getDate("dia_pedido").toLocalDate());
+                            Obj_DTO.setNome(rs.getString("nome"));
+                            Obj_DTO.setTelefone(rs.getString("telefone"));
+                
+                    listaDTO.add(Obj_DTO);
+                
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null,"Erro de Consulta "+ erro);
+        }
+    
+    
+            return listaDTO;
     }
    
     

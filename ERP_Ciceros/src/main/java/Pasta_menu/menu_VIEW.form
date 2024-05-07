@@ -41,8 +41,8 @@
                           <Component id="btn_cadastrar_usuario" max="32767" attributes="0"/>
                           <Component id="btn_cliente" alignment="0" max="32767" attributes="0"/>
                           <Component id="btn_cardapio" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jButton4" alignment="0" pref="113" max="32767" attributes="0"/>
+                          <Component id="btn_pedidos" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btn_pagamento" alignment="0" pref="113" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -62,9 +62,9 @@
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="btn_cardapio" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+              <Component id="btn_pedidos" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+              <Component id="btn_pagamento" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="214" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -100,15 +100,21 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cardapioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btn_pedidos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pedidos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_pedidosActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="btn_pagamento">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pagamento"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_pagamentoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

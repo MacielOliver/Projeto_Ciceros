@@ -7,6 +7,8 @@ package Pasta_menu;
 import Pasta_Login.cadastrar_Login_VIEW;
 import Pasta_cliente.cliente_Cadastrar_VIEW;
 import Pasta_estoque.Estoque_consulta_VIEW;
+import Pasta_pagamento.view_pagamento;
+import Pasta_pedidos.CadastroPedidosView;
 
 /**
  *
@@ -34,8 +36,8 @@ public class menu_VIEW extends javax.swing.JFrame {
         btn_cadastrar_usuario = new javax.swing.JButton();
         btn_cliente = new javax.swing.JButton();
         btn_cardapio = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btn_pedidos = new javax.swing.JButton();
+        btn_pagamento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -68,9 +70,19 @@ public class menu_VIEW extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Pedidos");
+        btn_pedidos.setText("Pedidos");
+        btn_pedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pedidosActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Pagamento");
+        btn_pagamento.setText("Pagamento");
+        btn_pagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pagamentoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,8 +99,8 @@ public class menu_VIEW extends javax.swing.JFrame {
                             .addComponent(btn_cadastrar_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn_cardapio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))))
+                            .addComponent(btn_pedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_pagamento, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))))
                 .addContainerGap(524, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -103,9 +115,9 @@ public class menu_VIEW extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(btn_cardapio)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btn_pedidos)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(btn_pagamento)
                 .addContainerGap(214, Short.MAX_VALUE))
         );
 
@@ -137,6 +149,20 @@ public class menu_VIEW extends javax.swing.JFrame {
        telaEstoque_consulta.setVisible(true);
     
     }//GEN-LAST:event_btn_cardapioActionPerformed
+
+    private void btn_pedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pedidosActionPerformed
+         CadastroPedidosView telaCadastroPedidos = new CadastroPedidosView();
+         telaCadastroPedidos.setLocationRelativeTo(null);
+         telaCadastroPedidos.setVisible(true);
+   
+    }//GEN-LAST:event_btn_pedidosActionPerformed
+
+    private void btn_pagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagamentoActionPerformed
+         view_pagamento telaview_pagamento= new view_pagamento();
+         telaview_pagamento.setLocationRelativeTo(null);
+         telaview_pagamento.setVisible(true);
+    
+    }//GEN-LAST:event_btn_pagamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,8 +203,8 @@ public class menu_VIEW extends javax.swing.JFrame {
     private javax.swing.JButton btn_cadastrar_usuario;
     private javax.swing.JButton btn_cardapio;
     private javax.swing.JButton btn_cliente;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btn_pagamento;
+    private javax.swing.JButton btn_pedidos;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

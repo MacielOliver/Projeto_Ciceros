@@ -29,6 +29,7 @@ public class Estoque_DAO {
             
             Pstm.execute();
             Pstm.close();
+            JOptionPane.showMessageDialog(null,"Cadastro realizado com sucesso ");
         } catch (SQLException erro)
         {
             JOptionPane.showMessageDialog(null,"Erro na estoqueDAO ao cadastrar produtos "+ erro);
@@ -78,8 +79,7 @@ public class Estoque_DAO {
                 
                 objDTO.setNome(rs.getString("nome"));
                 objDTO.setDescricao(rs.getString("descricao"));
-                objDTO.setPreco(rs.getDouble("preco"));   
-                
+                objDTO.setPreco(rs.getDouble("preco"));     
             }
             
             return objDTO;

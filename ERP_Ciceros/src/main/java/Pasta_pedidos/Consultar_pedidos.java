@@ -4,12 +4,17 @@
  */
 package Pasta_pedidos;
 
+import Pasta_estoque.estoque_DTO;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Jeff & Carla
  */
 public class Consultar_pedidos extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Consultar_pedidos
      */
@@ -26,21 +31,154 @@ public class Consultar_pedidos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblConsulta_Pedido = new javax.swing.JTable();
+        txt_filtro = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        btn_consultar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtAreaDescricao = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        rbtn_telefone = new javax.swing.JRadioButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        tblConsulta_Pedido.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Data do Pedido", "Nome", "Telefone"
+            }
+        ));
+        tblConsulta_Pedido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pesquisa_Automatica(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblConsulta_Pedido);
+
+        jLabel1.setText("Consultar Pedidos");
+
+        btn_consultar.setText("Consultar");
+        btn_consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarActionPerformed(evt);
+            }
+        });
+
+        txtAreaDescricao.setColumns(20);
+        txtAreaDescricao.setRows(5);
+        jScrollPane2.setViewportView(txtAreaDescricao);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Descrição");
+
+        rbtn_telefone.setText("Consultar por Telefone");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rbtn_telefone)
+                        .addGap(200, 200, 200)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt_filtro, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(btn_consultar)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(rbtn_telefone)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_filtro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
+        pedidos_DTO objDTO = new pedidos_DTO();
+        pedidos_DAO objDAO = new pedidos_DAO();
+        String filtro;
+        boolean telefone_Checkd=false;
+        ArrayList<pedidos_DTO> estDTO = new ArrayList<pedidos_DTO>();
+        
+        filtro = txt_filtro.getText();
+        
+        telefone_Checkd= rbtn_telefone.isSelected();
+        
+        DefaultTableModel model = (DefaultTableModel)tblConsulta_Pedido.getModel();
+        model.setNumRows(0);
+        if(telefone_Checkd == false){
+            estDTO = objDAO.Consulta_por_Data(filtro);
+        }
+        else if(telefone_Checkd == true){
+            estDTO = objDAO.Consulta_por_Tel(filtro);
+        }
+        
+                
+        for (int num = 0; num<estDTO.size();num++) {
+            model.addRow(new Object[]{
+            estDTO.get(num).getIdPedidos(),
+            estDTO.get(num).getData(),
+            estDTO.get(num).getNome(),
+            estDTO.get(num).getTelefone()
+            });
+  
+        }
+    }//GEN-LAST:event_btn_consultarActionPerformed
+
+    private void Pesquisa_Automatica(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pesquisa_Automatica
+        // AQUI É PARA PESQUISAR AUTOMATICO
+        pedidos_DTO objDTO = new pedidos_DTO();
+        pedidos_DAO objDAO = new pedidos_DAO();
+        
+        String pegar_id_tabela, pegar_preco_tabela;
+        
+        int linha_clicada_tabela;
+        
+        linha_clicada_tabela = tblConsulta_Pedido.getSelectedRow();
+        pegar_id_tabela = (tblConsulta_Pedido.getModel().getValueAt(linha_clicada_tabela, 0).toString());
+        
+        objDTO = objDAO.Consulta_por_ID(Integer.parseInt(pegar_id_tabela));
+        
+        txtAreaDescricao.setText(objDTO.getCampoObservacao());
+    }//GEN-LAST:event_Pesquisa_Automatica
 
     /**
      * @param args the command line arguments
@@ -78,5 +216,14 @@ public class Consultar_pedidos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_consultar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JRadioButton rbtn_telefone;
+    private javax.swing.JTable tblConsulta_Pedido;
+    private javax.swing.JTextArea txtAreaDescricao;
+    private javax.swing.JTextField txt_filtro;
     // End of variables declaration//GEN-END:variables
 }

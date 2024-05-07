@@ -13,6 +13,11 @@ public class view_pagamento extends javax.swing.JFrame {
     public view_pagamento() {
         initComponents();
     }
+    
+    public void importar_Dados(pagamento_DTO objDTO){
+        lblIDPedido.setText(Integer.toString(objDTO.getIdPedido()));
+        txtVlrPedido.setText(Double.toString(objDTO.getValorPedido()));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,10 +34,8 @@ public class view_pagamento extends javax.swing.JFrame {
         txtVlrPedido = new javax.swing.JTextField();
         lblDinheiro = new javax.swing.JLabel();
         lblTroco = new javax.swing.JLabel();
-        txtVlrTotal = new javax.swing.JTextField();
         txtTroco = new javax.swing.JTextField();
         btnFinalizar = new javax.swing.JButton();
-        lblValor = new javax.swing.JLabel();
         txtDinheiro = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
         lbl = new javax.swing.JLabel();
@@ -77,12 +80,6 @@ public class view_pagamento extends javax.swing.JFrame {
 
         lblTroco.setText("Troco");
 
-        txtVlrTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVlrTotalActionPerformed(evt);
-            }
-        });
-
         txtTroco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTrocoActionPerformed(evt);
@@ -95,8 +92,6 @@ public class view_pagamento extends javax.swing.JFrame {
                 btnFinalizarActionPerformed(evt);
             }
         });
-
-        lblValor.setText("Valor");
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -123,27 +118,23 @@ public class view_pagamento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblValor)
-                                    .addComponent(txtVlrTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnFinalizar)
-                            .addComponent(lblDinheiro)
-                            .addComponent(lblTroco)
-                            .addComponent(mtdPag_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCalcular)
-                            .addComponent(txtTroco, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                            .addComponent(txtVlrPedido)
-                            .addComponent(txtDinheiro))
-                        .addGap(23, 23, 23)
-                        .addComponent(btnConsultarPgm))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(btnFinalizar)
+                                        .addComponent(lblDinheiro)
+                                        .addComponent(lblTroco)
+                                        .addComponent(mtdPag_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtTroco, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                        .addComponent(txtDinheiro))
+                                    .addComponent(txtVlrPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(23, 23, 23)
+                                .addComponent(btnConsultarPgm))
+                            .addComponent(btnCalcular)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(118, 118, 118)
                         .addComponent(lbl)
@@ -155,36 +146,31 @@ public class view_pagamento extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblIDPedido, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblIDPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(mtdPag_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblDinheiro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtVlrPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(lblDinheiro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
                         .addComponent(lblTroco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtTroco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(txtDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCalcular)
-                            .addComponent(btnConsultarPgm)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblValor)
+                        .addGap(27, 27, 27)
+                        .addComponent(txtVlrPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(btnCalcular)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtVlrTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnFinalizar))
-                .addGap(35, 35, 35))
+                        .addComponent(btnConsultarPgm))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnFinalizar)
+                .addGap(87, 87, 87))
         );
 
         pack();
@@ -206,22 +192,19 @@ public class view_pagamento extends javax.swing.JFrame {
         int IDPedido = idPedido;
 
         mtdPagamento = (String) mtdPag_comboBox.getSelectedItem();
-        vlrPedido = valorPedido;
-
+        vlrPedido = Double.parseDouble(txtVlrPedido.getText());
+        IDPedido = Integer.parseInt(lblIDPedido.getText());
+        
         pagamento_DTO dto = new pagamento_DTO();
         dto.setData(data);
         dto.setFormaDePagamento(mtdPagamento);
         dto.setIdPedido(IDPedido);
-        dto.setValorPedido(valorPedido);
+        dto.setValorPedido(vlrPedido);
 
         pagamentoDAO dao = new pagamentoDAO();
         dao.save(dto);
 
     }//GEN-LAST:event_btnFinalizarActionPerformed
-
-    private void txtVlrTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVlrTotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtVlrTotalActionPerformed
 
     private void txtTrocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTrocoActionPerformed
         // TODO add your handling code here:
@@ -233,8 +216,7 @@ public class view_pagamento extends javax.swing.JFrame {
         vlrDinheiro = Double.parseDouble(txtDinheiro.getText());
         vlrTroco = vlrDinheiro - vlrPedido;
         txtTroco.setText(String.valueOf(vlrTroco));
-        vlrTotal = vlrPedido;
-        txtVlrTotal.setText("150");
+    
 
     }//GEN-LAST:event_btnCalcularActionPerformed
 
@@ -288,12 +270,10 @@ public class view_pagamento extends javax.swing.JFrame {
     private javax.swing.JLabel lblDinheiro;
     private javax.swing.JLabel lblIDPedido;
     private javax.swing.JLabel lblTroco;
-    private javax.swing.JLabel lblValor;
     private javax.swing.JComboBox<String> mtdPag_comboBox;
     private javax.swing.JTable tblPedidos;
     private javax.swing.JTextField txtDinheiro;
     private javax.swing.JTextField txtTroco;
     private javax.swing.JTextField txtVlrPedido;
-    private javax.swing.JTextField txtVlrTotal;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,8 @@ import Pasta_Login.usuario_DTO;
 import Pasta_cliente.cliente_DTO;
 import Pasta_estoque.Estoque_DAO;
 import Pasta_estoque.estoque_DTO;
+import Pasta_pagamento.pagamento_DTO;
+import Pasta_pagamento.view_pagamento;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
@@ -18,12 +20,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CadastroPedidosView extends javax.swing.JFrame {
     
-    
+    int Ultimo_ID_Gerado_no_Pedido;
+    double valor_Total_do_Pedido;
     double getPreco;
-    boolean teste = true;
+    
     
     estoque_DTO objDTO = new estoque_DTO();
     Estoque_DAO objDAO = new Estoque_DAO();
+    pedidos_DAO objpedidosDAO = new pedidos_DAO();
 
     /**
      * Creates new form CadastroPedidosView
@@ -31,6 +35,8 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     public CadastroPedidosView() {
         initComponents();
         txt_vlr_total.setText(String.valueOf(0));
+        txt_ID_Cliente.setText(String.valueOf(0));
+        txtValor.setVisible(false);
     }
     
     
@@ -70,7 +76,6 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         txt_ID_Cliente = new javax.swing.JTextField();
         txt_Nome_Cliente = new javax.swing.JTextField();
         txt_vlr_total = new javax.swing.JTextField();
-        txt_teste_id_pedido = new javax.swing.JTextField();
         btn_consultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -226,9 +231,13 @@ public class CadastroPedidosView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_vlr_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 120, 30));
-        getContentPane().add(txt_teste_id_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 380, 140, 90));
 
         btn_consultar.setText("Consultar");
+        btn_consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 610, 100, 40));
 
         pack();
@@ -336,31 +345,34 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
         
         int
-                campoIDCliente = 0;
+                campoIDCliente;
         String
                 campoObservacao;
         pedidos_DTO objDTO = new pedidos_DTO();
-        pedidos_DAO objDAO = new pedidos_DAO();
         
         LocalDate data = LocalDate.now();
         campoObservacao = AreaObservacao.getText();
+        campoIDCliente = Integer.parseInt(txt_ID_Cliente.getText());
         
         objDTO.setData(data);
         objDTO.setCampoObservacao(campoObservacao);
         
-        if(txt_ID_Cliente.equals(null)){
-             campoIDCliente = 0;
+        if(campoIDCliente != 0){
+            
+            objDTO.setCampoIDCliente(campoIDCliente);
+            
         }
-        else if (txt_ID_Cliente != null){
-            campoIDCliente = Integer.parseInt(txt_ID_Cliente.getText());
-
+        else if(campoIDCliente == 0) {
+            
+            campoIDCliente = 1;
+            objDTO.setCampoIDCliente(campoIDCliente);
         }
-        objDTO.setCampoIDCliente(campoIDCliente);
         
-        int id = objDAO.Salvar(objDTO);
         
-        txt_teste_id_pedido.setText(Integer.toString(id));
+         Ultimo_ID_Gerado_no_Pedido = objpedidosDAO.Salvar(objDTO);
+         valor_Total_do_Pedido = Double.parseDouble(txt_vlr_total.getText());
         
+        exportar_Dados();
         
     }//GEN-LAST:event_btnPagamentoActionPerformed
 
@@ -371,6 +383,12 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private void txt_vlr_totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_vlr_totalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_vlr_totalActionPerformed
+
+    private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
+        Consultar_pedidos telaConsultar_pedidos = new Consultar_pedidos();
+        telaConsultar_pedidos.setLocationRelativeTo(null);
+        telaConsultar_pedidos.setVisible(true);
+    }//GEN-LAST:event_btn_consultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -432,8 +450,25 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private javax.swing.JTextField txtValor;
     private javax.swing.JTextField txt_ID_Cliente;
     private javax.swing.JTextField txt_Nome_Cliente;
-    private javax.swing.JTextField txt_teste_id_pedido;
     private javax.swing.JTextField txt_vlr_total;
     // End of variables declaration//GEN-END:variables
+
+
+    public void exportar_Dados(){
+        pagamento_DTO objDTO = new pagamento_DTO();
+        view_pagamento objviewpagamento = new view_pagamento();
+
+        objDTO.setIdPedido(Ultimo_ID_Gerado_no_Pedido);
+        objDTO.setValorPedido(valor_Total_do_Pedido);
+        
+        objviewpagamento.importar_Dados(objDTO);
+        
+        
+        objviewpagamento.setLocationRelativeTo(null);
+        objviewpagamento.setVisible(true);
+    
+    }
+
+
 
 }
