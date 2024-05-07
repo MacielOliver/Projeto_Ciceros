@@ -149,16 +149,24 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         });
         getContentPane().add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 140, 120, 40));
 
+<<<<<<< Updated upstream
         btnExcluir.setBackground(new java.awt.Color(233, 180, 101));
         btnExcluir.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btnExcluir.setLabel("VOLTAR");
+=======
+        btnExcluir.setLabel("Excluir");
+>>>>>>> Stashed changes
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
             }
         });
+<<<<<<< Updated upstream
         getContentPane().add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 610, 80, 40));
+=======
+        getContentPane().add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
+>>>>>>> Stashed changes
 
         btnPesquisar.setBackground(new java.awt.Color(233, 180, 101));
         btnPesquisar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -421,6 +429,11 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         telaConsultar_pedidos.setLocationRelativeTo(null);
         telaConsultar_pedidos.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btn_consultarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+    
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
