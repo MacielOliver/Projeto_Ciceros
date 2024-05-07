@@ -10,7 +10,7 @@ public class ConexaoDAO {
         Connection conn = null;
         
         try {
-            String url= "jdbc:mysql://localhost:3306/db_cicreso?user=root&password=1234";
+            String url= "jdbc:mysql://localhost:3306/db_cicero?user=root&password=1234";
             
             conn=DriverManager.getConnection(url);
         } catch (SQLException erro) {

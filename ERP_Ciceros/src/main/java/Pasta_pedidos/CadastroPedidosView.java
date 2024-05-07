@@ -70,8 +70,10 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         txt_ID_Cliente = new javax.swing.JTextField();
         txt_Nome_Cliente = new javax.swing.JTextField();
         txt_vlr_total = new javax.swing.JTextField();
+        txt_teste_id_pedido = new javax.swing.JTextField();
+        btn_consultar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Pedidos");
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -224,6 +226,10 @@ public class CadastroPedidosView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_vlr_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 120, 30));
+        getContentPane().add(txt_teste_id_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 380, 140, 90));
+
+        btn_consultar.setText("Consultar");
+        getContentPane().add(btn_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 610, 100, 40));
 
         pack();
         setLocationRelativeTo(null);
@@ -330,17 +336,30 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
         
         int
-                campoIDCliente;
+                campoIDCliente = 0;
         String
                 campoObservacao;
+        pedidos_DTO objDTO = new pedidos_DTO();
+        pedidos_DAO objDAO = new pedidos_DAO();
         
         LocalDate data = LocalDate.now();
-        
-        
-        campoIDCliente = Integer.parseInt(txt_ID_Cliente.getText());
-        
         campoObservacao = AreaObservacao.getText();
         
+        objDTO.setData(data);
+        objDTO.setCampoObservacao(campoObservacao);
+        
+        if(txt_ID_Cliente.equals(null)){
+             campoIDCliente = 0;
+        }
+        else if (txt_ID_Cliente != null){
+            campoIDCliente = Integer.parseInt(txt_ID_Cliente.getText());
+
+        }
+        objDTO.setCampoIDCliente(campoIDCliente);
+        
+        int id = objDAO.Salvar(objDTO);
+        
+        txt_teste_id_pedido.setText(Integer.toString(id));
         
         
     }//GEN-LAST:event_btnPagamentoActionPerformed
@@ -400,6 +419,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private java.awt.Button btnPagamento;
     private java.awt.Button btnPesquisar;
     private java.awt.Button btnSalvar;
+    private javax.swing.JButton btn_consultar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -412,6 +432,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private javax.swing.JTextField txtValor;
     private javax.swing.JTextField txt_ID_Cliente;
     private javax.swing.JTextField txt_Nome_Cliente;
+    private javax.swing.JTextField txt_teste_id_pedido;
     private javax.swing.JTextField txt_vlr_total;
     // End of variables declaration//GEN-END:variables
 

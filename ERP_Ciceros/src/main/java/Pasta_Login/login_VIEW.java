@@ -182,7 +182,7 @@ public class login_VIEW extends javax.swing.JFrame {
                 }
                 else{
                     //mostrar mensagem de erro
-                    JOptionPane.showMessageDialog(null, "Ususario ou senha esta errado.");
+                    JOptionPane.showMessageDialog(null, "Usuario ou senha esta errado.");
                 }
         } 
         catch (SQLException erro) {
