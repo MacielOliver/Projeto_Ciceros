@@ -38,6 +38,7 @@ public class menu_VIEW extends javax.swing.JFrame {
         btn_cardapio = new javax.swing.JButton();
         btn_pedidos = new javax.swing.JButton();
         btn_pagamento = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -46,82 +47,74 @@ public class menu_VIEW extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Menu");
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("MENU");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, 30));
 
-        btn_cadastrar_usuario.setText("Usuario");
+        btn_cadastrar_usuario.setBackground(new java.awt.Color(233, 180, 101));
+        btn_cadastrar_usuario.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_cadastrar_usuario.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cadastrar_usuario.setText("USUÁRIO");
         btn_cadastrar_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cadastrar_usuarioActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_cadastrar_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 150, -1));
 
-        btn_cliente.setText("Cliente");
+        btn_cliente.setBackground(new java.awt.Color(233, 180, 101));
+        btn_cliente.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_cliente.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cliente.setText("CLIENTE");
         btn_cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_clienteActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 150, -1));
 
-        btn_cardapio.setText("Cardapio");
+        btn_cardapio.setBackground(new java.awt.Color(233, 180, 101));
+        btn_cardapio.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_cardapio.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cardapio.setText("CARDÁPIO");
         btn_cardapio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cardapioActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_cardapio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 150, -1));
 
-        btn_pedidos.setText("Pedidos");
+        btn_pedidos.setBackground(new java.awt.Color(233, 180, 101));
+        btn_pedidos.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_pedidos.setForeground(new java.awt.Color(255, 255, 255));
+        btn_pedidos.setText("PEDIDOS");
         btn_pedidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_pedidosActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 150, -1));
 
-        btn_pagamento.setText("Pagamento");
+        btn_pagamento.setBackground(new java.awt.Color(233, 180, 101));
+        btn_pagamento.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_pagamento.setForeground(new java.awt.Color(255, 255, 255));
+        btn_pagamento.setText("PAGAMENTO");
         btn_pagamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_pagamentoActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_pagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 150, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_cadastrar_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_cardapio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_pedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_pagamento, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))))
-                .addContainerGap(524, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_cadastrar_usuario)
-                .addGap(28, 28, 28)
-                .addComponent(btn_cliente)
-                .addGap(32, 32, 32)
-                .addComponent(btn_cardapio)
-                .addGap(18, 18, 18)
-                .addComponent(btn_pedidos)
-                .addGap(18, 18, 18)
-                .addComponent(btn_pagamento)
-                .addContainerGap(214, Short.MAX_VALUE))
-        );
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_cadastrar_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrar_usuarioActionPerformed
@@ -206,5 +199,6 @@ public class menu_VIEW extends javax.swing.JFrame {
     private javax.swing.JButton btn_pagamento;
     private javax.swing.JButton btn_pedidos;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

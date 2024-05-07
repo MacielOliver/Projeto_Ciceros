@@ -35,14 +35,14 @@ public class consultar_Login_VIEW extends javax.swing.JFrame {
         txt_filtro = new javax.swing.JTextField();
         btn_alterar_login = new javax.swing.JButton();
         btn_buscar_com_filtro = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         btn_excluir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consultar Usuários");
         setMaximumSize(new java.awt.Dimension(720, 480));
         setMinimumSize(new java.awt.Dimension(720, 480));
-        setPreferredSize(new java.awt.Dimension(720, 480));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -62,6 +62,7 @@ public class consultar_Login_VIEW extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 610, 303));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("USUÁRIO");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 70, -1));
@@ -73,35 +74,47 @@ public class consultar_Login_VIEW extends javax.swing.JFrame {
         });
         getContentPane().add(txt_filtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 150, 30));
 
+        btn_alterar_login.setBackground(new java.awt.Color(233, 180, 101));
         btn_alterar_login.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_alterar_login.setForeground(new java.awt.Color(255, 255, 255));
         btn_alterar_login.setText("ALTERAR");
         btn_alterar_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_alterar_loginActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_alterar_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
+        getContentPane().add(btn_alterar_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 100, 30));
 
+        btn_buscar_com_filtro.setBackground(new java.awt.Color(233, 180, 101));
         btn_buscar_com_filtro.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_buscar_com_filtro.setForeground(new java.awt.Color(255, 255, 255));
         btn_buscar_com_filtro.setText("FILTRAR");
         btn_buscar_com_filtro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_buscar_com_filtroActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_buscar_com_filtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
+        getContentPane().add(btn_buscar_com_filtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 100, 30));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        jLabel3.setText("CONSULTAR USUÁRIOS");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
-
-        btn_excluir.setText("Excluir");
+        btn_excluir.setBackground(new java.awt.Color(233, 180, 101));
+        btn_excluir.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_excluir.setForeground(new java.awt.Color(255, 255, 255));
+        btn_excluir.setText("EXCLUIR");
         btn_excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_excluirActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 80, 30));
+        getContentPane().add(btn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 100, 30));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("CONSULTAR USUÁRIOS");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, -1));
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
         setLocationRelativeTo(null);
@@ -195,6 +208,7 @@ public class consultar_Login_VIEW extends javax.swing.JFrame {
     private javax.swing.JButton btn_excluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabela_consultar_usuario;
     private javax.swing.JTextField txt_filtro;

@@ -54,29 +54,30 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaPedidos = new javax.swing.JTable();
-        txtDescricao = new javax.swing.JLabel();
         txtAreaDescricao = new java.awt.TextArea();
-        txtObservacao = new javax.swing.JLabel();
         AreaObservacao = new java.awt.TextArea();
-        Quantidade = new javax.swing.JLabel();
-        txtQuantidade = new javax.swing.JTextField();
-        Valor = new javax.swing.JLabel();
-        txtValor = new javax.swing.JTextField();
         btnSalvar = new java.awt.Button();
         btnPagamento = new java.awt.Button();
         btnAdicionar = new java.awt.Button();
         btnExcluir = new java.awt.Button();
         btnPesquisar = new java.awt.Button();
         btnLimpar = new java.awt.Button();
+        btn_consultar = new java.awt.Button();
+        jLabel1 = new javax.swing.JLabel();
+        Quantidade = new javax.swing.JLabel();
+        txtDescricao = new javax.swing.JLabel();
+        txtObservacao = new javax.swing.JLabel();
+        Valor = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        txtValor = new javax.swing.JTextField();
+        txtQuantidade = new javax.swing.JTextField();
         txt_ID_Cliente = new javax.swing.JTextField();
         txt_Nome_Cliente = new javax.swing.JTextField();
         txt_vlr_total = new javax.swing.JTextField();
-        btn_consultar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Pedidos");
@@ -85,12 +86,6 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PEDIDOS");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1250, -1));
 
         tabelaPedidos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         tabelaPedidos.setModel(new javax.swing.table.DefaultTableModel(
@@ -111,43 +106,135 @@ public class CadastroPedidosView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelaPedidos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 300, 560));
-
-        txtDescricao.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        txtDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtDescricao.setText("DESCRIÇÃO");
-        getContentPane().add(txtDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 480, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 300, 550));
 
         txtAreaDescricao.setEditable(false);
         txtAreaDescricao.setEnabled(false);
         txtAreaDescricao.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         getContentPane().add(txtAreaDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 480, 200));
 
-        txtObservacao.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        txtObservacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtObservacao.setText("OBSERVAÇÃO");
-        getContentPane().add(txtObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 480, 20));
-
         AreaObservacao.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         getContentPane().add(AreaObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 490, 240));
 
-        Quantidade.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        Quantidade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Quantidade.setText("QUANTIDADE");
-        getContentPane().add(Quantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 60, 160, -1));
-
-        txtQuantidade.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        txtQuantidade.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setBackground(new java.awt.Color(233, 180, 101));
+        btnSalvar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalvar.setLabel("SALVAR");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQuantidadeActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(txtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 90, 100, 40));
+        getContentPane().add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 610, 80, 40));
+
+        btnPagamento.setBackground(new java.awt.Color(233, 180, 101));
+        btnPagamento.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnPagamento.setForeground(new java.awt.Color(255, 255, 255));
+        btnPagamento.setLabel("PAGAMENTO");
+        btnPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagamentoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 610, 120, 40));
+
+        btnAdicionar.setBackground(new java.awt.Color(233, 180, 101));
+        btnAdicionar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnAdicionar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdicionar.setLabel("ADICIONAR");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 140, 120, 40));
+
+        btnExcluir.setBackground(new java.awt.Color(233, 180, 101));
+        btnExcluir.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btnExcluir.setLabel("VOLTAR");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 610, 80, 40));
+
+        btnPesquisar.setBackground(new java.awt.Color(233, 180, 101));
+        btnPesquisar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnPesquisar.setForeground(new java.awt.Color(255, 255, 255));
+        btnPesquisar.setLabel("PESQUISAR");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 90, 40));
+
+        btnLimpar.setBackground(new java.awt.Color(233, 180, 101));
+        btnLimpar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpar.setLabel("LIMPAR");
+        btnLimpar.setName("PEDIDOS"); // NOI18N
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 90, 40));
+
+        btn_consultar.setBackground(new java.awt.Color(233, 180, 101));
+        btn_consultar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btn_consultar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_consultar.setLabel("CONSULTAR");
+        btn_consultar.setName("PEDIDOS"); // NOI18N
+        btn_consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, 100, 40));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PEDIDOS");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1280, -1));
+
+        Quantidade.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        Quantidade.setForeground(new java.awt.Color(255, 255, 255));
+        Quantidade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Quantidade.setText("QUANTIDADE");
+        getContentPane().add(Quantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 60, 120, -1));
+
+        txtDescricao.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        txtDescricao.setForeground(new java.awt.Color(255, 255, 255));
+        txtDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtDescricao.setText("DESCRIÇÃO");
+        getContentPane().add(txtDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 480, -1));
+
+        txtObservacao.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        txtObservacao.setForeground(new java.awt.Color(255, 255, 255));
+        txtObservacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtObservacao.setText("OBSERVAÇÃO");
+        getContentPane().add(txtObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 490, 20));
 
         Valor.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        Valor.setForeground(new java.awt.Color(255, 255, 255));
         Valor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Valor.setText("VALOR TOTAL");
-        getContentPane().add(Valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 550, 140, 20));
+        getContentPane().add(Valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 530, 130, 20));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("ID:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, 20));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("NOME:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
 
         txtValor.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txtValor.setText(" ");
@@ -157,88 +244,33 @@ public class CadastroPedidosView extends javax.swing.JFrame {
                 txtValorActionPerformed(evt);
             }
         });
-        getContentPane().add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 200, 160, 40));
+        getContentPane().add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 200, 120, 40));
 
-        btnSalvar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnSalvar.setLabel("SALVAR");
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+        txtQuantidade.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        txtQuantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
+                txtQuantidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 610, 80, 40));
+        getContentPane().add(txtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 90, 120, 40));
 
-        btnPagamento.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnPagamento.setLabel("PAGAMENTO");
-        btnPagamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPagamentoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 630, 110, 40));
-
-        btnAdicionar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnAdicionar.setLabel("ADICIONAR");
-        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdicionarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 140, 100, 40));
-
-        btnExcluir.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnExcluir.setLabel("VOLTAR");
-        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 610, 80, 40));
-
-        btnPesquisar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnPesquisar.setLabel("PESQUISAR");
-        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 90, 40));
-
-        btnLimpar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnLimpar.setLabel("LIMPAR");
-        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimparActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 90, 40));
-
-        jLabel2.setText("ID:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
-
-        jLabel3.setText("Nome:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-
+        txt_ID_Cliente.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         txt_ID_Cliente.setEnabled(false);
-        getContentPane().add(txt_ID_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 60, -1));
+        getContentPane().add(txt_ID_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 60, -1));
 
+        txt_Nome_Cliente.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         txt_Nome_Cliente.setEnabled(false);
-        getContentPane().add(txt_Nome_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 90, -1));
+        getContentPane().add(txt_Nome_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 90, -1));
 
         txt_vlr_total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_vlr_totalActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_vlr_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 590, 120, 30));
+        getContentPane().add(txt_vlr_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 570, 120, 30));
 
-        btn_consultar.setText("Consultar");
-        btn_consultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 610, 100, 40));
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
         setLocationRelativeTo(null);
@@ -387,7 +419,7 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
         Consultar_pedidos telaConsultar_pedidos = new Consultar_pedidos();
         telaConsultar_pedidos.setLocationRelativeTo(null);
-        telaConsultar_pedidos.setVisible(true);
+        telaConsultar_pedidos.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btn_consultarActionPerformed
 
     /**
@@ -437,10 +469,11 @@ public class CadastroPedidosView extends javax.swing.JFrame {
     private java.awt.Button btnPagamento;
     private java.awt.Button btnPesquisar;
     private java.awt.Button btnSalvar;
-    private javax.swing.JButton btn_consultar;
+    private java.awt.Button btn_consultar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaPedidos;
     private java.awt.TextArea txtAreaDescricao;
