@@ -42,6 +42,7 @@ public class Estoque_consulta_VIEW extends javax.swing.JFrame {
         btn_alterar = new javax.swing.JButton();
         btn_excluir = new javax.swing.JButton();
         btn_cadastrar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cardápio");
@@ -52,6 +53,7 @@ public class Estoque_consulta_VIEW extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CONSULTAR CARDAPIO");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
 
@@ -59,7 +61,7 @@ public class Estoque_consulta_VIEW extends javax.swing.JFrame {
         txt_Descricao.setRows(5);
         jScrollPane1.setViewportView(txt_Descricao);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 610, 133));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 300, 260));
 
         Tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -79,16 +81,19 @@ public class Estoque_consulta_VIEW extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(Tabela);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 610, 118));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 260, 260));
 
         txt_fltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_fltroActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_fltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 209, -1));
+        getContentPane().add(txt_fltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 209, -1));
 
-        btn_Consulta.setText("Consulta");
+        btn_Consulta.setBackground(new java.awt.Color(233, 180, 101));
+        btn_Consulta.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_Consulta.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Consulta.setText("CONSULTAR");
         btn_Consulta.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
@@ -103,35 +108,48 @@ public class Estoque_consulta_VIEW extends javax.swing.JFrame {
                 btn_ConsultaActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_Consulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, -1, -1));
+        getContentPane().add(btn_Consulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 120, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("PESQUISAR");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
-        btn_alterar.setText("Alterar");
+        btn_alterar.setBackground(new java.awt.Color(233, 180, 101));
+        btn_alterar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_alterar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_alterar.setText("ALTERAR");
         btn_alterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_alterarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, -1, -1));
+        getContentPane().add(btn_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 120, -1));
 
-        btn_excluir.setText("Excluir");
+        btn_excluir.setBackground(new java.awt.Color(233, 180, 101));
+        btn_excluir.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_excluir.setForeground(new java.awt.Color(255, 255, 255));
+        btn_excluir.setText("EXCLUIR");
         btn_excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_excluirActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, -1, -1));
+        getContentPane().add(btn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 120, -1));
 
-        btn_cadastrar.setText("Cadastrar");
+        btn_cadastrar.setBackground(new java.awt.Color(233, 180, 101));
+        btn_cadastrar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_cadastrar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cadastrar.setText("CADASTRAR");
         btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
+        getContentPane().add(btn_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 120, -1));
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
         setLocationRelativeTo(null);
@@ -245,6 +263,7 @@ public class Estoque_consulta_VIEW extends javax.swing.JFrame {
     private javax.swing.JButton btn_excluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea txt_Descricao;

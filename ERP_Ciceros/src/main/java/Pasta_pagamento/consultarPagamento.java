@@ -34,11 +34,14 @@ public class consultarPagamento extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPagamento = new javax.swing.JTable();
-        btnConsultar = new javax.swing.JButton();
         txt_data = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         lblID_pedido = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblPagamento.setAutoCreateRowSorter(true);
         tblPagamento.setModel(new javax.swing.table.DefaultTableModel(
@@ -63,52 +66,60 @@ public class consultarPagamento extends javax.swing.JFrame {
             tblPagamento.getColumnModel().getColumn(1).setMinWidth(110);
         }
 
-        btnConsultar.setText("Consultar");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 564, 300));
+
+        txt_data.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        txt_data.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_dataActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 119, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("CONSULTAR PAGAMENTO");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, -1));
+
+        lblID_pedido.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lblID_pedido.setForeground(new java.awt.Color(255, 255, 255));
+        lblID_pedido.setText("DATA");
+        getContentPane().add(lblID_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, 20));
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+
+        btnConsultar.setBackground(new java.awt.Color(233, 180, 101));
+        btnConsultar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setText("CONSULTAR");
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultarActionPerformed(evt);
             }
         });
 
-        txt_data.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_dataActionPerformed(evt);
-            }
-        });
-
-        lblID_pedido.setText("Data");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(lblID_pedido)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_data, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnConsultar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(323, Short.MAX_VALUE)
+                .addComponent(btnConsultar)
+                .addGap(280, 280, 280))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConsultar)
-                    .addComponent(lblID_pedido))
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(btnConsultar)
+                .addContainerGap(373, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dataActionPerformed
@@ -174,6 +185,8 @@ public class consultarPagamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblID_pedido;
     private javax.swing.JTable tblPagamento;

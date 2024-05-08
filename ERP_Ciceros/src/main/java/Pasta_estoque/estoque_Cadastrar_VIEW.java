@@ -47,6 +47,7 @@ public class estoque_Cadastrar_VIEW extends javax.swing.JFrame {
         btn_salvar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         lbl_ID = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Produtos");
@@ -56,31 +57,43 @@ public class estoque_Cadastrar_VIEW extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CADASTRO DE PRODUTOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, 36));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, 36));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NOME");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("PREÇO");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DESCRIÇÃO");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
+
+        txt_nome_produto.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         getContentPane().add(txt_nome_produto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 190, 32));
+
+        txt_preco_produto.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         getContentPane().add(txt_preco_produto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 190, 32));
 
         txt_descricao.setColumns(20);
+        txt_descricao.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         txt_descricao.setRows(5);
         jScrollPane1.setViewportView(txt_descricao);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 330, 130));
 
+        btn_salvar.setBackground(new java.awt.Color(233, 180, 101));
         btn_salvar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_salvar.setForeground(new java.awt.Color(255, 255, 255));
         btn_salvar.setText("SALVAR");
         btn_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,9 +102,14 @@ public class estoque_Cadastrar_VIEW extends javax.swing.JFrame {
         });
         getContentPane().add(btn_salvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("ID");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
-        getContentPane().add(lbl_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 70, 50));
+        getContentPane().add(lbl_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 70, 50));
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
         setLocationRelativeTo(null);
@@ -151,6 +169,7 @@ public class estoque_Cadastrar_VIEW extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_ID;
     private javax.swing.JTextArea txt_descricao;

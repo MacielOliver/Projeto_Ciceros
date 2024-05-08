@@ -43,6 +43,7 @@ public class cadastrar_Login_VIEW extends javax.swing.JFrame {
         btn_fechar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         btn_consultar_usuarios = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -52,14 +53,16 @@ public class cadastrar_Login_VIEW extends javax.swing.JFrame {
         setTitle("Cadastrar Usuário");
         setMaximumSize(new java.awt.Dimension(720, 480));
         setMinimumSize(new java.awt.Dimension(720, 480));
-        setPreferredSize(new java.awt.Dimension(720, 480));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CADASTRAR USUÁRIO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, -1));
 
+        txt_usuario.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         txt_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_usuarioActionPerformed(evt);
@@ -68,41 +71,53 @@ public class cadastrar_Login_VIEW extends javax.swing.JFrame {
         getContentPane().add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("USUARIO");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("SENHA");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("CONFIRMAR");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+
+        txt_senha.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         getContentPane().add(txt_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 140, -1));
+
+        txt_confirmar_senha.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         getContentPane().add(txt_confirmar_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("RECUPERAÇÃO DE SENHA ");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
         txt_pergunta.setColumns(20);
+        txt_pergunta.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         txt_pergunta.setRows(5);
         jScrollPane1.setViewportView(txt_pergunta);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
 
+        txt_resposta.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         txt_resposta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_respostaActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_resposta, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 234, -1));
+        getContentPane().add(txt_resposta, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 270, -1));
 
+        btn_salvar.setBackground(new java.awt.Color(233, 180, 101));
         btn_salvar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_salvar.setForeground(new java.awt.Color(255, 255, 255));
         btn_salvar.setText("SALVAR");
         btn_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +126,9 @@ public class cadastrar_Login_VIEW extends javax.swing.JFrame {
         });
         getContentPane().add(btn_salvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, -1, 30));
 
+        btn_fechar.setBackground(new java.awt.Color(233, 180, 101));
         btn_fechar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_fechar.setForeground(new java.awt.Color(255, 255, 255));
         btn_fechar.setText("FECHAR");
         btn_fechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,16 +138,23 @@ public class cadastrar_Login_VIEW extends javax.swing.JFrame {
         getContentPane().add(btn_fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 90, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("RESPOSTA");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, -1, -1));
 
-        btn_consultar_usuarios.setText("Consultar Usuarios");
+        btn_consultar_usuarios.setBackground(new java.awt.Color(233, 180, 101));
+        btn_consultar_usuarios.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_consultar_usuarios.setForeground(new java.awt.Color(255, 255, 255));
+        btn_consultar_usuarios.setText("CONSULTAR USUÁRIOS");
         btn_consultar_usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultar_usuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_consultar_usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, -1, -1));
+        getContentPane().add(btn_consultar_usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, 30));
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
         setLocationRelativeTo(null);
@@ -228,6 +252,7 @@ public class cadastrar_Login_VIEW extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;

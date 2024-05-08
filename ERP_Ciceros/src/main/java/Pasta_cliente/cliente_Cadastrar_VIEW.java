@@ -57,6 +57,7 @@ public class cliente_Cadastrar_VIEW extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btn_pedido = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,21 +75,50 @@ public class cliente_Cadastrar_VIEW extends javax.swing.JFrame {
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("CLIENTES");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Nome");
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("NOME");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
 
-        jLabel2.setText("Endereço");
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("ENDEREÇO");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
 
-        jLabel3.setText("Telefone");
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("TELEFONE");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
-        jLabel4.setText("Clientes");
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("CLIENTES");
+        jLabel4.setToolTipText("");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 6, 1280, 33));
 
-        btn_salvar.setText("Salvar");
+        txtCliNome.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        getContentPane().add(txtCliNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 377, 30));
+
+        txtCliEndereco.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        getContentPane().add(txtCliEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 70, 380, 30));
+
+        txtCliFone.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        getContentPane().add(txtCliFone, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 170, 30));
+
+        btn_salvar.setBackground(new java.awt.Color(233, 180, 101));
+        btn_salvar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_salvar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_salvar.setText("SALVAR");
         btn_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salvarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_salvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 110, 30));
 
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,148 +138,92 @@ public class cliente_Cadastrar_VIEW extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblClientes);
 
-        jLabel5.setText("Telefone");
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 1110, 360));
 
-        btn_pesquisar.setText("Pesquisar");
+        txtCliPesquisar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        getContentPane().add(txtCliPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 192, 170, 30));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("TELEFONE");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
+
+        btn_pesquisar.setBackground(new java.awt.Color(233, 180, 101));
+        btn_pesquisar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_pesquisar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_pesquisar.setText("PESQUISAR");
         btn_pesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_pesquisarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_pesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 196, -1, 30));
 
-        btn_alterar.setText("Alterar");
+        btn_alterar.setBackground(new java.awt.Color(233, 180, 101));
+        btn_alterar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_alterar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_alterar.setText("ALTERAR");
         btn_alterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_alterarActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 196, 110, 30));
 
-        btn_excluir.setText("Excluir");
+        btn_excluir.setBackground(new java.awt.Color(233, 180, 101));
+        btn_excluir.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_excluir.setForeground(new java.awt.Color(255, 255, 255));
+        btn_excluir.setText("EXCLUIR");
         btn_excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_excluirActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 196, 110, 30));
 
         txtCliId.setEditable(false);
+        txtCliId.setBackground(new java.awt.Color(255, 255, 255));
+        txtCliId.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         txtCliId.setEnabled(false);
         txtCliId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCliIdActionPerformed(evt);
             }
         });
+        getContentPane().add(txtCliId, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 140, 80, 33));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 612, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 612, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ID CLIENTE");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 110, -1, -1));
 
-        btn_pedido.setText("Pedido");
+        btn_pedido.setBackground(new java.awt.Color(233, 180, 101));
+        btn_pedido.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btn_pedido.setForeground(new java.awt.Color(255, 255, 255));
+        btn_pedido.setText("PEDIDO");
         btn_pedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_pedidoActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 196, 110, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtCliId, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5))
-                        .addGap(13, 13, 13))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtCliNome)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(txtCliFone, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCliPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_pesquisar)
-                                .addGap(24, 24, 24)
-                                .addComponent(btn_alterar)))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCliEndereco))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_excluir)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_pedido)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addContainerGap(60, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(319, 319, 319)
-                .addComponent(jLabel4)
-                .addGap(0, 0, Short.MAX_VALUE))
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1280, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel4)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(txtCliNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCliEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtCliFone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_salvar)
-                    .addComponent(jLabel9))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(454, 454, 454)
-                        .addComponent(jLabel7)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(txtCliId, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCliPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(btn_pesquisar)
-                            .addComponent(btn_alterar)
-                            .addComponent(btn_excluir)
-                            .addComponent(btn_pedido))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(36, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 710));
 
         pack();
         setLocationRelativeTo(null);
@@ -403,6 +377,7 @@ public class cliente_Cadastrar_VIEW extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

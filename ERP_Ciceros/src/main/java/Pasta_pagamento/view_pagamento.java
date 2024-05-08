@@ -41,8 +41,11 @@ public class view_pagamento extends javax.swing.JFrame {
         lbl = new javax.swing.JLabel();
         lblIDPedido = new javax.swing.JLabel();
         btnConsultarPgm = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblPedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,117 +66,114 @@ public class view_pagamento extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblPedidos);
 
-        mtdPag_comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Debito", "Credito", "Pix", "Dinheiro" }));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 375, 320));
+
+        mtdPag_comboBox.setBackground(new java.awt.Color(233, 180, 101));
+        mtdPag_comboBox.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        mtdPag_comboBox.setForeground(new java.awt.Color(255, 255, 255));
+        mtdPag_comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DEBITO", "CREDITO", "PIX", "DINHEIRO" }));
         mtdPag_comboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mtdPag_comboBoxActionPerformed(evt);
             }
         });
+        getContentPane().add(mtdPag_comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 160, -1));
 
+        txtVlrPedido.setForeground(new java.awt.Color(255, 255, 255));
         txtVlrPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtVlrPedidoActionPerformed(evt);
             }
         });
+        getContentPane().add(txtVlrPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 160, -1));
 
-        lblDinheiro.setText("Dinheiro");
+        lblDinheiro.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lblDinheiro.setForeground(new java.awt.Color(255, 255, 255));
+        lblDinheiro.setText("TOTAL");
+        getContentPane().add(lblDinheiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
 
-        lblTroco.setText("Troco");
+        lblTroco.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lblTroco.setForeground(new java.awt.Color(255, 255, 255));
+        lblTroco.setText("TROCO");
+        getContentPane().add(lblTroco, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
 
+        txtTroco.setForeground(new java.awt.Color(255, 255, 255));
         txtTroco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTrocoActionPerformed(evt);
             }
         });
+        getContentPane().add(txtTroco, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 160, -1));
 
-        btnFinalizar.setText("Finalizar");
+        btnFinalizar.setBackground(new java.awt.Color(233, 180, 101));
+        btnFinalizar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btnFinalizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnFinalizar.setText("FINALIZAR");
         btnFinalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinalizarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 160, -1));
 
-        btnCalcular.setText("Calcular");
+        txtDinheiro.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(txtDinheiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 160, -1));
+
+        btnCalcular.setBackground(new java.awt.Color(233, 180, 101));
+        btnCalcular.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalcular.setText("CALCULAR");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
             }
         });
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 160, -1));
 
+        lbl.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lbl.setForeground(new java.awt.Color(255, 255, 255));
         lbl.setText("IDPedido");
+        getContentPane().add(lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
 
+        lblIDPedido.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lblIDPedido.setForeground(new java.awt.Color(255, 255, 255));
         lblIDPedido.setText("ID");
+        getContentPane().add(lblIDPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
 
-        btnConsultarPgm.setText("Consultar pagamentos");
+        btnConsultarPgm.setBackground(new java.awt.Color(233, 180, 101));
+        btnConsultarPgm.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btnConsultarPgm.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultarPgm.setText("CONSULTAR PAG.");
         btnConsultarPgm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultarPgmActionPerformed(evt);
             }
         });
+        getContentPane().add(btnConsultarPgm, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 160, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(btnFinalizar)
-                                        .addComponent(lblDinheiro)
-                                        .addComponent(lblTroco)
-                                        .addComponent(mtdPag_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtTroco, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                                        .addComponent(txtDinheiro))
-                                    .addComponent(txtVlrPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(23, 23, 23)
-                                .addComponent(btnConsultarPgm))
-                            .addComponent(btnCalcular)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(lbl)
-                        .addGap(121, 121, 121)
-                        .addComponent(lblIDPedido)))
-                .addContainerGap(19, Short.MAX_VALUE))
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PAGAMENTO");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, -1));
+
+        jPanel1.setBackground(new java.awt.Color(120, 0, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblIDPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(mtdPag_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblDinheiro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(lblTroco)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTroco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(txtVlrPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnCalcular)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnConsultarPgm))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnFinalizar)
-                .addGap(87, 87, 87))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void mtdPag_comboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mtdPag_comboBoxActionPerformed
@@ -265,6 +265,8 @@ public class view_pagamento extends javax.swing.JFrame {
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnConsultarPgm;
     private javax.swing.JButton btnFinalizar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl;
     private javax.swing.JLabel lblDinheiro;
