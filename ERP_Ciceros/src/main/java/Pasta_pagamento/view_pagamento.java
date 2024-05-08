@@ -79,7 +79,6 @@ public class view_pagamento extends javax.swing.JFrame {
         });
         getContentPane().add(mtdPag_comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 160, -1));
 
-        txtVlrPedido.setForeground(new java.awt.Color(255, 255, 255));
         txtVlrPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtVlrPedidoActionPerformed(evt);
@@ -97,7 +96,6 @@ public class view_pagamento extends javax.swing.JFrame {
         lblTroco.setText("TROCO");
         getContentPane().add(lblTroco, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
 
-        txtTroco.setForeground(new java.awt.Color(255, 255, 255));
         txtTroco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTrocoActionPerformed(evt);
@@ -115,8 +113,6 @@ public class view_pagamento extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 160, -1));
-
-        txtDinheiro.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(txtDinheiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 160, -1));
 
         btnCalcular.setBackground(new java.awt.Color(233, 180, 101));
